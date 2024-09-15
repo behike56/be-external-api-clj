@@ -1,2 +1,3 @@
+; aeroの設定ファイル
 {:port 3000
  :env :dev}
