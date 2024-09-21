@@ -1,4 +1,5 @@
 (ns be-external-api-clj.core
+  (:gen-class)
   (:require
    [cljapi.system :as system]))
 
