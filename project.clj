@@ -28,6 +28,6 @@
                     :main-opts ["-m" "kaocha.runner"]}
              :build {:dependencies [[io.github.clojure/tools.build "0.10.5"]]
                      :source-paths ["build"]
-                       :main build}}
+                       :main build}
              :uberjar {:aot :all
                        :jvm-opts ["-Dclojure.compiler.direct-linking=true"]}})

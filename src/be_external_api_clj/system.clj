@@ -2,18 +2,19 @@
   (:require
    [be-external-api-clj.component.handler :as c.handler]
    [be-external-api-clj.component.server :as c.server]
+   [be-external-api-clj.config :as config]
    [com.stuartsierra.component :as component]))
 
-(defn- new-system []
+(defn- new-system [config]
   (component/system-map
    :handler (c.handler/map->Handler {})
    :server (component/using
-            (c.server/map->JettyServer {:opts {:join? false
-                                                :port 8000}})
+            (c.server/map->JettyServer (:server config))
             [:handler])))
 
-(defn start []
-  (let [system (new-system)]
+(defn start [profile]
+  (let [config (config/read-config profile)
+        system (new-system config)]
     (component/start system)))
 
 (defn stop [system]

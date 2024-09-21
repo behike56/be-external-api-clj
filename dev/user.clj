@@ -4,8 +4,8 @@
 
 (defonce system (atom nil))
 
-(defn start []
-  (reset! system (system/start)))
+(defn start [profile]
+  (reset! system (system/start profile)))
 
 (defn stop []
   (when @system
@@ -13,6 +13,6 @@
 
 (defn go 
   "REPLで呼び出す"
-  []
+  [profile]
   (stop)
-  (start))
+  (start profile))
