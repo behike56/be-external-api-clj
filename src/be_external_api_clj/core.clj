@@ -1,7 +1,7 @@
 (ns be-external-api-clj.core
   (:gen-class)
   (:require
-   [cljapi.system :as system]))
+   [be-external-api-clj.system :as system]))
 
 (defn -main
   [& _args]
