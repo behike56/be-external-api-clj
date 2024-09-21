@@ -3,6 +3,7 @@
   :url "http://example.com/FIXME"
   :license {:name "EPL-2.0 OR GPL-2.0-or-later WITH Classpath-exception-2.0"
             :url "https://www.eclipse.org/legal/epl-2.0/"}
+  :paths ["src" "resources"]
   :dependencies [[org.clojure/clojure "1.12.0"]
                  [org.clojure/core.memoize "1.1.266"]
                  [info.sunng/ring-jetty9-adapter "0.33.3" :exclusions [org.slf4j/slf4j-api]]
@@ -25,6 +26,8 @@
                     :plugins [[lambdaisland/kaocha "1.91.1392"]]
                     :test-paths ["test"]
                     :main-opts ["-m" "kaocha.runner"]}
-             :build {:dependencies [[io.github.clojure/tools.build "0.10.5"]]}
+             :build {:dependencies [[io.github.clojure/tools.build "0.10.5"]]
+                     :source-paths ["build"]
+                       :main build}}
              :uberjar {:aot :all
                        :jvm-opts ["-Dclojure.compiler.direct-linking=true"]}})

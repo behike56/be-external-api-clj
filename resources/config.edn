@@ -1,3 +1,5 @@
 ; aeroの設定ファイル
-{:port 3000
- :env :dev}
+{:server {:opts {:host "localhost"
+                 :port #long #profile {:default 5000
+                                       :dev 8000}
+                 :join? false}}}
