@@ -11,6 +11,8 @@
   (when @system
     (reset! system (system/stop @system))))
 
-(defn go []
+(defn go 
+  "REPLで呼び出す"
+  []
   (stop)
   (start))
